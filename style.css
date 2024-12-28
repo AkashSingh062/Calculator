@@ -6,8 +6,8 @@
 
 body {
    width: 100%;
-   height: 100vh;
-   padding: 20px;
+   min-height: 100vh;
+   padding: 10px;
    font-family: 'Arial', sans-serif;
    background: #1a1a1a;
    display: flex;
@@ -16,30 +16,35 @@ body {
 }
 
 .container {
-   width: 450px;
-   height: 650px;
+   width: 100%;
+   max-width: 450px;
+   aspect-ratio: 9/16;
    background: #242424;
    border-radius: 20px;
-   padding: 20px;
+   padding: 15px;
    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
    display: grid;
    grid-template-areas: 
-      "out out out out"
-      "btn7 btn8 btn9 divide"
-      "btn4 btn5 btn6 multiply"
-      "btn1 btn2 btn3 sub"
-      "clear btn0 equal add";
-   gap: 15px;
-   justify-content: center;
-   align-items: center;
+       "out out out out"
+       "btn7 btn8 btn9 divide"
+       "btn4 btn5 btn6 multiply"
+       "btn1 btn2 btn3 sub"
+       "clear btn0 equal add";
+   gap: 8px;
+   /* Modified grid template rows to be equal except for output */
+   grid-template-rows: 0.8fr repeat(4, minmax(0, 1fr));
+   grid-template-columns: repeat(4, minmax(0, 1fr));
+   /* Added to contain children */
+   overflow: hidden;
 }
+
 
 .output {
    grid-area: out;
    width: 100%;
-   font-size: 3.5rem;
-   padding: 20px;
-   margin-bottom: 10px;
+   font-size: clamp(2rem, 5vw, 3.5rem);
+   padding: 15px;
+   margin-bottom: 5px;
    border: none;
    border-radius: 12px;
    background: #333333;
@@ -48,16 +53,19 @@ body {
    text-align: right;
    overflow: auto;
    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+   display: flex;
+   align-items: center;
+   font-size: 4rem;
 }
 
 .btn {
-   width: 80px;
-   height: 80px;
+   width: 100%;
+   aspect-ratio: 1/1;  /* This ensures buttons stay circular */
    font-weight: bold;
    display: flex;
    justify-content: center;
    align-items: center;
-   font-size: 2rem;
+   font-size: clamp(1.5rem, 4vw, 2rem);
    border: none;
    border-radius: 50%;
    cursor: pointer;
@@ -67,18 +75,17 @@ body {
    transition: all 0.2s ease;
 }
 
-.btn:hover {
-   transform: translateY(-2px);
-   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+.btn:active {
+   transform: scale(0.95);
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .btn-op-col {
    background: #00ccff;
    color: #242424;
-   box-shadow: none;
-   transform: scale(0.95);
 }
 
+/* Grid areas */
 .btn9{grid-area: btn9;}
 .btn8{grid-area: btn8;}
 .btn7{grid-area: btn7;}
@@ -92,121 +99,31 @@ body {
 .btn1{grid-area: btn1;}
 .sub{grid-area: sub;}
 .btn0{grid-area: btn0;}
-.equal{grid-area: equal; background: #00ff88; color: #242424 !important;}
+.equal{grid-area: equal; background: #00ff88; color: #242424;}
 .add{grid-area: add;}
-.clear{grid-area: clear; background: #ff3366; color: white !important;}
+.clear{grid-area: clear; background: #ff3366; color: white;}
 
-/* For tablets and medium-sized screens */
-@media screen and (max-width: 768px) {
-   .container {
-      width: 400px;
-      height: 600px;
-      padding: 15px;
-      gap: 12px;
-   }
-   .btn {
-      width: 75px;
-      height: 75px;
-      font-size: 1.8rem;
-   }
-   .output {
-      font-size: 3rem;
-      padding: 15px;
-   }
-}
-
-/* For mobile devices - landscape */
-@media screen and (max-width: 580px) {
+/* Small devices (landscape phones) */
+@media screen and (max-width: 576px) {
    body {
-      padding: 10px;
+       padding: 5px;
    }
+   
    .container {
-      width: 100%;
-      height: 95vh;
-      padding: 10px;
-      gap: 8px;
-   }
-   .btn {
-      width: 65px;
-      height: 65px;
-      font-size: 1.5rem;
-   }
-   .output {
-      font-size: 2.5rem;
-      padding: 12px;
+       padding: 10px;
+       gap: 8px;
    }
 }
 
-/* For small mobile devices - portrait */
-@media screen and (max-width: 380px) {
-   body {
-      padding: 5px;
-   }
+/* For devices in landscape mode */
+@media screen and (orientation: landscape) and (max-height: 500px) {
    .container {
-      padding: 8px;
-      gap: 6px;
+       aspect-ratio: 16/9;
+       max-height: 95vh;
    }
-   .btn {
-      width: 55px;
-      height: 55px;
-      font-size: 1.3rem;
-   }
+   
    .output {
-      font-size: 2rem;
-      padding: 10px;
-   }
-}
-
-/* For very small devices */
-@media screen and (max-width: 320px) {
-   .container {
-      padding: 6px;
-      gap: 4px;
-   }
-   .btn {
-      width: 50px;
-      height: 50px;
-      font-size: 1.2rem;
-   }
-   .output {
-      font-size: 1.8rem;
-      padding: 8px;
-   }
-}
-
-/* For height-constrained devices */
-@media screen and (max-height: 600px) {
-   .container {
-      height: 98vh;
-      padding: 8px;
-      gap: 6px;
-   }
-   .btn {
-      width: 55px;
-      height: 55px;
-      font-size: 1.3rem;
-   }
-   .output {
-      font-size: 2rem;
-      padding: 10px;
-   }
-}
-
-/* For very large screens */
-@media screen and (min-width: 1200px) {
-   .container {
-      width: 500px;
-      height: 700px;
-      padding: 25px;
-      gap: 20px;
-   }
-   .btn {
-      width: 90px;
-      height: 90px;
-      font-size: 2.5rem;
-   }
-   .output {
-      font-size: 4rem;
-      padding: 25px;
+       margin-bottom: 2px;
+       font-size: 2.5rem;
    }
 }
