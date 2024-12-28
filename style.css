@@ -6,6 +6,7 @@
 body{
    width: 100%;
    height: 100vh;
+   padding: 20px;
    font-family: Arial, sans-serif;
    color: #333;
    background: #000000;
@@ -15,9 +16,9 @@ body{
 
 }
 .container{
-   width: 95%;
+   width: 90%;
    height: 100%;
-   padding: 20px;
+   padding: 10px;
    background: #0c0b0b;
    display: grid;
    grid-template-areas: "out out out out"
@@ -27,12 +28,13 @@ body{
               "clear btn0 equal add";
    justify-content: space-around;
    align-items: center;
+   align-self: center;
    gap: 1rem;
 }
 .output{
    grid-area: out;
    font-size: 4.5rem;
-   padding: 20px;
+   padding: 15px;
    border: none;
    border-radius: 10px;
    background: rgb(29, 26, 20);
