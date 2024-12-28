@@ -1,94 +1,117 @@
-*{
+* {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
 }
-body{
+
+body {
    width: 100%;
    height: 100vh;
    padding: 20px;
-   font-family: Arial, sans-serif;
-   color: #333;
-   background: #000000;
-   height: 100vh;
+   font-family: 'Arial', sans-serif;
+   background: #1a1a1a;
    display: flex;
    justify-content: center;
-
-}
-.container{
-   width: 100%;
-   height: 100%;
-   background: #0c0b0b;
-   display: grid;
-   grid-template-areas: "out out out out"
-              "btn7 btn8 btn9 divide"
-              "btn4 btn5 btn6 multiply"
-              "btn1 btn2 btn3 sub"
-              "clear btn0 equal add";
-   justify-content: space-around;
    align-items: center;
-   align-self: center;
-   gap:0.5rem;
-   margin: auto;
 }
-.output{
-   display: block;
-   width: 100%;
+
+.container {
+   width: 450px;
+   height: 650px;
+   background: #242424;
+   border-radius: 20px;
+   padding: 20px;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+   display: grid;
+   grid-template-areas: 
+      "out out out out"
+      "btn7 btn8 btn9 divide"
+      "btn4 btn5 btn6 multiply"
+      "btn1 btn2 btn3 sub"
+      "clear btn0 equal add";
+   gap: 15px;
+   justify-content: center;
+   align-items: center;
+}
+
+.output {
    grid-area: out;
-   font-size: 4.5rem;
-   padding: 15px;
-   border: none;
-   border-radius: 10px;
-   background: rgb(29, 26, 20);
-   color: coral;
    width: 100%;
+   font-size: 3.5rem;
+   padding: 20px;
+   margin-bottom: 10px;
+   border: none;
+   border-radius: 12px;
+   background: #333333;
+   color: #00ff88;
    font-weight: 500;
    text-align: right;
-   overflow: scroll;
+   overflow: auto;
+   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.btn{
-   width: 115px;
-   height: 115px;
+
+.btn {
+   width: 80px;
+   height: 80px;
    font-weight: bold;
    display: flex;
    justify-content: center;
    align-items: center;
-   font-size: 3rem;
-   padding: 0px;
+   font-size: 2rem;
+   border: none;
    border-radius: 50%;
    cursor: pointer;
-   background: #000;
-   color: aqua;
-   box-shadow: 2px 2px 2px firebrick;
+   background: #333333;
+   color: #00ccff;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   transition: all 0.2s ease;
 }
-.btn-op-col{
-   background: #2c2c2df9;
+
+.btn:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-op-col {
+   background: #00ccff;
+   color: #242424;
    box-shadow: none;
-   color: aqua;
-   border: none;
-   transform: scale(1.05);
-   transition: transform 0.2s ease-in-out;
+   transform: scale(0.95);
 }
 
-.btn9{grid-area: btn9;}.btn8{grid-area: btn8;}.btn7{grid-area:btn7;}.div{grid-area: divide;}.btn6{grid-area: btn6;}.btn5{grid-area: btn5;}.btn4{grid-area: btn4;}.multiply{grid-area: multiply;}.btn3{grid-area: btn3;}.btn2{grid-area: btn2;}.btn1{grid-area: btn1;}.sub{grid-area: sub;}.btn0{grid-area: btn0;}.equal{grid-area: equal;color: springgreen !important;}.add{grid-area: add;}.clear{grid-area: clear;color: red !important;}
-
-/* Your existing CSS remains the same until the media queries */
+.btn9{grid-area: btn9;}
+.btn8{grid-area: btn8;}
+.btn7{grid-area: btn7;}
+.div{grid-area: divide;}
+.btn6{grid-area: btn6;}
+.btn5{grid-area: btn5;}
+.btn4{grid-area: btn4;}
+.multiply{grid-area: multiply;}
+.btn3{grid-area: btn3;}
+.btn2{grid-area: btn2;}
+.btn1{grid-area: btn1;}
+.sub{grid-area: sub;}
+.btn0{grid-area: btn0;}
+.equal{grid-area: equal; background: #00ff88; color: #242424 !important;}
+.add{grid-area: add;}
+.clear{grid-area: clear; background: #ff3366; color: white !important;}
 
 /* For tablets and medium-sized screens */
 @media screen and (max-width: 768px) {
    .container {
-      width: 90%;
-      height: 95%;
-      gap: 0.3rem;
+      width: 400px;
+      height: 600px;
+      padding: 15px;
+      gap: 12px;
    }
    .btn {
-      width: 90px;
-      height: 90px;
-      font-size: 2.5rem;
+      width: 75px;
+      height: 75px;
+      font-size: 1.8rem;
    }
    .output {
-      font-size: 3.5rem;
-      padding: 12px;
+      font-size: 3rem;
+      padding: 15px;
    }
 }
 
@@ -99,19 +122,18 @@ body{
    }
    .container {
       width: 100%;
-      height: 100%;
-      gap: 0.01rem;
+      height: 95vh;
+      padding: 10px;
+      gap: 8px;
    }
    .btn {
-      width: 60px;
-      height: 60px;
-      font-size: 1.3rem;
-      box-shadow: 1px 1px 1px firebrick;
+      width: 65px;
+      height: 65px;
+      font-size: 1.5rem;
    }
    .output {
-      font-size: 2rem;
-      padding: 10px;
-      font-weight: 300;
+      font-size: 2.5rem;
+      padding: 12px;
    }
 }
 
@@ -121,15 +143,30 @@ body{
       padding: 5px;
    }
    .container {
-      width: 100%;
-      height: 100%;
-      gap: 0.01rem;
+      padding: 8px;
+      gap: 6px;
+   }
+   .btn {
+      width: 55px;
+      height: 55px;
+      font-size: 1.3rem;
+   }
+   .output {
+      font-size: 2rem;
+      padding: 10px;
+   }
+}
+
+/* For very small devices */
+@media screen and (max-width: 320px) {
+   .container {
+      padding: 6px;
+      gap: 4px;
    }
    .btn {
       width: 50px;
       height: 50px;
       font-size: 1.2rem;
-      box-shadow: 1px 1px 1px firebrick;
    }
    .output {
       font-size: 1.8rem;
@@ -137,54 +174,39 @@ body{
    }
 }
 
-/* For very small devices */
-@media screen and (max-width: 320px) {
-   .container {
-      gap: 0.005rem;
-   }
-   .btn {
-      width: 45px;
-      height: 45px;
-      font-size: 1rem;
-   }
-   .output {
-      font-size: 1.5rem;
-      padding: 5px;
-   }
-}
-
 /* For height-constrained devices */
 @media screen and (max-height: 600px) {
-   body {
-      padding: 5px;
-   }
    .container {
       height: 98vh;
-      gap: 0.1rem;
+      padding: 8px;
+      gap: 6px;
    }
    .btn {
       width: 55px;
       height: 55px;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
    }
    .output {
       font-size: 2rem;
-      padding: 8px;
+      padding: 10px;
    }
 }
 
 /* For very large screens */
 @media screen and (min-width: 1200px) {
    .container {
-      width: 80%;
-      max-width: 1000px;
+      width: 500px;
+      height: 700px;
+      padding: 25px;
+      gap: 20px;
    }
    .btn {
-      width: 130px;
-      height: 130px;
-      font-size: 3.5rem;
+      width: 90px;
+      height: 90px;
+      font-size: 2.5rem;
    }
    .output {
-      font-size: 5rem;
+      font-size: 4rem;
+      padding: 25px;
    }
 }
