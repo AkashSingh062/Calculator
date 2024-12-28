@@ -1,0 +1,166 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body{
+   width: 100%;
+   height: 100vh;
+   font-family: Arial, sans-serif;
+   color: #333;
+   background: #000000;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+
+}
+.container{
+   width: 95%;
+   height: 100%;
+   padding: 20px;
+   background: #0c0b0b;
+   display: grid;
+   grid-template-areas: "out out out out"
+              "btn-7 btn-8 btn-9 divide"
+              "btn4 btn5 btn6 multiply"
+              "btn1 btn2 btn3 sub"
+              "clear btn0 equal add";
+   justify-content: space-around;
+   align-items: center;
+   gap: 1rem;
+}
+.output{
+   grid-area: out;
+   font-size: 4.5rem;
+   padding: 20px;
+   border: none;
+   border-radius: 10px;
+   background: rgb(29, 26, 20);
+   color: coral;
+   width: 100%;
+   font-weight: 500;
+   text-align: right;
+   overflow: scroll;
+}
+
+.btn9{
+   grid-area: btn-9;
+}
+.btn8{
+   grid-area: btn-8;
+}
+.btn7{
+   grid-area: btn-7;
+}
+.div{
+   grid-area: divide;
+}
+.btn6{
+   grid-area: btn6;
+}
+.btn5{
+   grid-area: btn5;
+}
+.btn4{
+   grid-area: btn4;
+}
+.multiply{
+   grid-area: multiply;
+}
+.btn3{
+   grid-area: btn3;
+}
+.btn2{
+   grid-area: btn2;
+}
+.btn1{
+   grid-area: btn1;
+}
+.sub{
+   grid-area: sub;
+}
+.btn0{
+   grid-area: btn0;
+}
+.equal{
+   grid-area: equal;
+   color: springgreen !important;
+}
+.add{
+   grid-area: add;
+}
+.clear{
+   grid-area: clear;
+   color: red !important;
+}
+
+.btn{
+   aspect-ratio: 1 / 1;
+   width: 115px;
+   height: auto;
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 3rem;
+   padding: 0px;
+   border-radius: 50%;
+   cursor: pointer;
+   background: #000;
+   color: aqua;
+   box-shadow: 2px 2px 2px firebrick;
+}
+.btn-op-col{
+   background: #2c2c2df9;
+   box-shadow: none;
+   color: aqua;
+   border: none;
+   transform: scale(1.05);
+   transition: transform 0.2s ease-in-out;
+}
+@media screen and (max-width: 450px) {
+   .btn{
+      width: 70px;
+      font-size: 1.5rem;
+   }
+   .output{
+      font-size: 2rem;
+      padding: 10px;
+      font-weight: 300;
+   }
+}
+@media screen and (max-width: 370px) {
+   .btn{
+      width:60px;
+      font-size: 1.5rem;
+   }
+   .output{
+      font-size: 2rem;
+      padding: 10px;
+      font-weight: 300;
+   }
+}
+
+@media screen and (max-width: 500px) {
+   .btn{
+      width:80px;
+      font-size: 1.9rem;
+   }
+   .output{
+      font-size: 3rem;
+      padding: 10px;
+      font-weight: 300;
+   }
+   
+}
+@media screen and (max-width: 700px) {
+   .btn{
+      width:100px;
+      font-size: 2rem;
+   }
+   .output{
+      font-size: 3.5rem;
+      padding: 15px;
+      font-weight: 300;
+   }
+}
