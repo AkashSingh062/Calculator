@@ -72,20 +72,119 @@ body{
 
 .btn9{grid-area: btn9;}.btn8{grid-area: btn8;}.btn7{grid-area:btn7;}.div{grid-area: divide;}.btn6{grid-area: btn6;}.btn5{grid-area: btn5;}.btn4{grid-area: btn4;}.multiply{grid-area: multiply;}.btn3{grid-area: btn3;}.btn2{grid-area: btn2;}.btn1{grid-area: btn1;}.sub{grid-area: sub;}.btn0{grid-area: btn0;}.equal{grid-area: equal;color: springgreen !important;}.add{grid-area: add;}.clear{grid-area: clear;color: red !important;}
 
+/* Your existing CSS remains the same until the media queries */
+
+/* For tablets and medium-sized screens */
+@media screen and (max-width: 768px) {
+   .container {
+      width: 90%;
+      height: 95%;
+      gap: 0.3rem;
+   }
+   .btn {
+      width: 90px;
+      height: 90px;
+      font-size: 2.5rem;
+   }
+   .output {
+      font-size: 3.5rem;
+      padding: 12px;
+   }
+}
+
+/* For mobile devices - landscape */
 @media screen and (max-width: 580px) {
-   .container{
+   body {
+      padding: 10px;
+   }
+   .container {
       width: 100%;
       height: 100%;
-      gap:0.01rem;
+      gap: 0.01rem;
    }
-   .btn{
+   .btn {
       width: 60px;
       height: 60px;
       font-size: 1.3rem;
+      box-shadow: 1px 1px 1px firebrick;
    }
-   .output{
+   .output {
       font-size: 2rem;
       padding: 10px;
       font-weight: 300;
+   }
+}
+
+/* For small mobile devices - portrait */
+@media screen and (max-width: 380px) {
+   body {
+      padding: 5px;
+   }
+   .container {
+      width: 100%;
+      height: 100%;
+      gap: 0.01rem;
+   }
+   .btn {
+      width: 50px;
+      height: 50px;
+      font-size: 1.2rem;
+      box-shadow: 1px 1px 1px firebrick;
+   }
+   .output {
+      font-size: 1.8rem;
+      padding: 8px;
+   }
+}
+
+/* For very small devices */
+@media screen and (max-width: 320px) {
+   .container {
+      gap: 0.005rem;
+   }
+   .btn {
+      width: 45px;
+      height: 45px;
+      font-size: 1rem;
+   }
+   .output {
+      font-size: 1.5rem;
+      padding: 5px;
+   }
+}
+
+/* For height-constrained devices */
+@media screen and (max-height: 600px) {
+   body {
+      padding: 5px;
+   }
+   .container {
+      height: 98vh;
+      gap: 0.1rem;
+   }
+   .btn {
+      width: 55px;
+      height: 55px;
+      font-size: 1.2rem;
+   }
+   .output {
+      font-size: 2rem;
+      padding: 8px;
+   }
+}
+
+/* For very large screens */
+@media screen and (min-width: 1200px) {
+   .container {
+      width: 80%;
+      max-width: 1000px;
+   }
+   .btn {
+      width: 130px;
+      height: 130px;
+      font-size: 3.5rem;
+   }
+   .output {
+      font-size: 5rem;
    }
 }
