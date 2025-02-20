@@ -1,37 +1,53 @@
-# Calculator
+# 🧮 Calculator - Simple & Efficient  
 
-## Description
-The **Calculator** is a simple web-based application that allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division. The calculator has a user-friendly interface with buttons for numbers and operations.
+## 🌟 Overview  
+The **Calculator** is a sleek, web-based **arithmetic tool** that allows users to perform **basic mathematical operations** with ease. Featuring a **clean UI**, responsive buttons, and instant calculations, this calculator is perfect for everyday use! 🚀  
 
-## Features
-- Perform basic arithmetic operations: addition, subtraction, multiplication, and division.
-- Clear the display with the "C" button.
-- Display the result of the calculation with the "=" button.
+---
 
-## Technologies Used
-- **HTML** - Structure of the application.
-- **CSS** - Styling and UI design.
-- **JavaScript** - Handles the calculator logic.
+## ⚡ Key Features  
+✅ **Basic Arithmetic** – Perform addition, subtraction, multiplication, and division.  
+✅ **Clear Display** – Reset calculations instantly with the **"C"** button.  
+✅ **Instant Results** – Click **"="** to get the result in real-time.  
 
-## How to Use
-1. Open the `index.html` file in a web browser.
-2. Click on the number buttons to input numbers.
-3. Click on the operation buttons to perform calculations.
-4. Click the "=" button to display the result.
-5. Click the "C" button to clear the display.
+---
 
-## File Structure
-- `index.html` - The main HTML file that contains the structure of the application.
-- `style.css` - The CSS file that styles the application.
-- `main.js` - The JavaScript file that contains the calculator logic.
+## 🛠 Built With  
+🖥️ **HTML** – Provides the structure of the calculator.  
+🎨 **CSS** – Enhances design and responsiveness.  
+⚡ **JavaScript** – Handles the logic for calculations.  
 
-## Future Improvements
-- Add support for more advanced mathematical operations.
-- Improve the UI/UX design.
-- Add keyboard support for input.
+---
 
-## Author
-Developed by **Akash**.
+## 🔥 How to Use  
+1️⃣ Open the `index.html` file in your browser.  
+2️⃣ Click on the **number buttons** to input numbers.  
+3️⃣ Click on the **operation buttons** (+, -, ×, ÷) to perform calculations.  
+4️⃣ Press the **"="** button to display the result.  
+5️⃣ Click the **"C"** button to reset the display.  
 
-## License
-This project is open-source and free to
+---
+
+## 📁 File Structure  
+📌 `index.html` – The main HTML file defining the structure.  
+🎨 `style.css` – CSS file for styling and UI design.  
+⚡ `main.js` – JavaScript file containing the calculator logic.  
+
+---
+
+## 🚀 Planned Enhancements  
+✨ **Advanced Operations** – Support for square root, percentage, and exponentiation.  
+✨ **Improved UI/UX** – Sleeker design with enhanced user experience.  
+✨ **Keyboard Support** – Enable users to input numbers and operations via keyboard.  
+
+---
+
+## 👨‍💻 Developed By  
+💡 Created with passion by **Akash**  
+
+---
+
+## 📜 License  
+🔓 This project is **open-source** and free to use!  
+
+🚀 Start calculating **smarter and faster** today! 🔢🔥  
